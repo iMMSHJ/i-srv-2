@@ -1,41 +1,62 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ============================================================
+# i-srv-2 — Production Deployment Repository
+# ============================================================
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Runtime / temporary
+/proc/
+/sys/
+/dev/
+/run/
+/tmp/
+/var/run/
+/var/lock/
+/var/cache/
+/var/log/
+/var/tmp/
+/lost+found/
 
-# testing
-/coverage
+# OS / private user data
+/root/
+/home/*/.ssh/
+/home/*/.gnupg/
+/home/*/.cache/
+/home/*/.npm/
+/home/*/.pm2/
 
-# next.js
-/.next/
-/out/
+# Frontend runtime/build artifacts
+/opt/frontend/app/node_modules/
+/opt/frontend/app/.next/
+/opt/frontend/app/out/
+/opt/frontend/app/build/
+/opt/frontend/app/coverage/
 
-# production
-/build
+# Secrets / environment
+/opt/frontend/app/.env
+/opt/frontend/app/.env.*
+!/opt/frontend/app/.env.example
 
-# misc
-.DS_Store
+# Private keys / certificates
 *.pem
+*.key
+*.p12
+*.pfx
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# Logs
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
+# TypeScript generated files
 *.tsbuildinfo
-next-env.d.ts
+
+# Package caches
+/var/lib/npm/
+/var/lib/node_modules/
+
+# System areas — never deployment source
+/boot/
+/bin/
+/sbin/
+/lib/
+/lib64/
+/usr/
+/srv/
+/snap/
